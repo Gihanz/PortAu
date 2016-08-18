@@ -1,0 +1,891 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<title>3 Connecting to Oracle Database XE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/">
+<meta name="generator" content="Oracle DARB XHTML Converter - Version 4.5.2 Build 42">
+<meta name="Date" content="2005-07-10T12:57:20+08:00">
+<meta name="doctitle" content="Oracle® Database Express Edition 2 Day Plus Java Developer Guide 10g Release 2 (10.2)">
+<meta name="partno" content="B25320-02">
+<link rel="Start" href="http://www.oracle.com/pls/xe102/homepage" title="Home" type="text/html">
+<link rel="Copyright" href="http://docs.oracle.com/cd/B25329_01/doc/dcommon/html/cpyr.htm" title="Copyright" type="text/html">
+<link rel="Stylesheet" href="3%20Connecting%20to%20Oracle%20Database%20XE_files/blafdoc.css" title="Default" type="text/css">
+<link rel="Contents" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/toc.htm" title="Contents" type="text/html">
+<link rel="Index" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/index.htm" title="Index" type="text/html">
+<link rel="Prev" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/getstart.htm" title="Previous" type="text/html">
+<link rel="Next" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/querdata.htm" title="Next" type="text/html">
+<link rel="alternate" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320.pdf" title="PDF version" type="application/pdf">
+<script type="text/javascript"></script><link rel="stylesheet" type="text/css" href="3%20Connecting%20to%20Oracle%20Database%20XE_files/ndhui.css"></head>
+<body><script type="text/javascript" language="javascript" src="3%20Connecting%20to%20Oracle%20Database%20XE_files/ndhui.js"></script>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top" align="left"><b>Oracle® Database Express Edition 2 Day Plus Java Developer Guide<br>
+10<i>g</i> Release 2 (10.2)</b><br>
+Part Number B25320-02</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" width="294" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top" align="center"><a href="http://www.oracle.com/pls/xe102/homepage"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/doclib.gif" alt="Go to Documentation Home"><br>
+<span class="icon">Home</span></a></td>
+<td valign="top" align="center"><a href="http://www.oracle.com/pls/xe102/portal.all_books"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/booklist.gif" alt="Go to Book List"><br>
+<span class="icon">Book List</span></a></td>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/toc.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/toc.gif" alt="Go to Table of Contents"><br>
+<span class="icon">Contents</span></a></td>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/index.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/index.gif" alt="Go to Index"><br>
+<span class="icon">Index</span></a></td>
+<td valign="top" align="center"><a href="http://www.oracle.com/pls/xe102/show_mindex"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/masterix.gif" alt="Go to Master Index"><br>
+<span class="icon">Master Index</span></a></td>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/dcommon/html/feedback.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/feedbck2.gif" alt="Go to Feedback page"><br>
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<hr>
+<table class="simple oac_no_warn" summary="" width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top" align="left">
+<table class="simple oac_no_warn" summary="" width="98" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/getstart.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/leftnav.gif" alt="Go to previous page"><br>
+<span class="icon">Previous</span></a></td>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/querdata.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/rightnav.gif" alt="Go to next page"><br>
+<span class="icon">Next</span></a></td>
+</tr>
+</tbody></table>
+</td>
+<td style="font-size: 90%" valign="top" align="right"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320.pdf">View PDF</a></td>
+</tr>
+</tbody></table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CACIADFI" name="CACIADFI"></a>
+<h1 class="chapter"><span class="secnum">3</span> Connecting to Oracle Database XE</h1>
+<p>To be able to access, insert, update, and delete information in 
+Oracle Database XE from a Java application, you first need to connect to
+ the database using a <code>Connection</code> object. This chapter is 
+the first in a series of five chapters, each of which describes how to 
+create parts of this Java application. This chapter describes, in 
+particular, how you can create code that helps you connect to the 
+database.</p>
+<p>This chapter includes the following sections:</p>
+<ul>
+<li>
+<p><a href="#CACBBDGB">Connecting to Oracle Database from JDeveloper</a></p>
+</li>
+<li>
+<p><a href="#CACCIGDB">Setting Up Applications and Projects in JDeveloper</a></p>
+</li>
+<li>
+<p><a href="#CACGJJFE">Connecting to the Database from a Java Application</a></p>
+</li>
+</ul>
+<a id="CACBBDGB" name="CACBBDGB"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect1"><a id="sthref231" name="sthref231"></a>Connecting to Oracle Database from JDeveloper</h2>
+<p>You can set up and manage database connections in JDeveloper to 
+enable your application to communicate with external data sources, 
+including Oracle Database and offline database objects. This is done 
+using the Connection Navigator. The same navigator is also used to 
+manage other connections your application needs, such as connections to 
+application servers. The following subsections describe how you can use 
+the Connection Navigator to view the database and its objects and to 
+create a connection to the database:</p>
+<ul>
+<li>
+<p><a href="#CACGCEBD">JDeveloper Connection Navigator</a></p>
+</li>
+<li>
+<p><a href="#CACFEJFB">Creating a Database Connection</a></p>
+</li>
+<li>
+<p><a href="#CACFFCBJ">Browsing the Data Using the Connection Navigator</a></p>
+</li>
+</ul>
+<a id="CACGCEBD" name="CACGCEBD"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><a id="sthref232" name="sthref232"></a><a id="sthref233" name="sthref233"></a>JDeveloper Connection Navigator</h3>
+<p>The Connection Navigator displays all currently defined connections. To view the Connection Navigator, select the <span class="bold">Connections</span>
+ tab in the navigator panel on the top left-hand side of the JDeveloper 
+display, if it is displayed, or use the View menu. For an illustration 
+of the default layout of the JDeveloper IDE, see <a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/introduction.htm#CACDJCEI">Figure 1-1</a>.</p>
+<p>You can use the Connection Navigator to <a id="sthref234" name="sthref234"></a>browse through the connections it displays. In particular, for a database schema, you can also <a id="sthref235" name="sthref235"></a>view database objects, tables, views, and their contents.</p>
+<p>Database connections are shown under the Database node. To view the 
+objects in the database, expand the connection. Expanding a schema 
+displays nodes for the object types in that schema. Expanding the node 
+for an object type displays its individual objects. When you expand a 
+table node, you can view the structure of the table and the data within 
+the table.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CACFEJFB" name="CACFEJFB"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><a id="sthref236" name="sthref236"></a>Creating a Database Connection</h3>
+<p>You can connect to any database for which you have connection 
+details. When you create a database connection, you must specify a user 
+name and a password. By default, the connection allows you to browse 
+only the schema of the user that you specify in the connection.</p>
+<p>To create a connection, follow these steps:</p>
+<ol>
+<li>
+<p>Start JDeveloper.</p>
+</li>
+<li>
+<p>From the <span class="bold">View</span> menu, select <span class="bold"><a id="sthref237" name="sthref237"></a>Connection Navigator</span>. The Connection Navigator is displayed, showing you a list of the available connections.</p>
+</li>
+<li>
+<p>Right-click <span class="bold">Database</span>, and from the shortcut menu, select <span class="bold">New Database Connection</span>. The Create Database Connection wizard is displayed. Click <span class="bold">Next</span> on the Welcome screen. The Step 1 screen is displayed.</p>
+</li>
+<li>
+<p>In the Step 1 screen, do not change the default values for the connection name and type, <a id="sthref238" name="sthref238"></a><code>DBConnection1</code> and <code>Oracle (JDBC)</code>. Click <span class="bold">Next</span>. The Step 2 screen is displayed.</p>
+</li>
+<li>
+<p>In the Step 2 screen, enter <code>HR</code> in both the <span class="bold">Username</span> and <span class="bold">Password</span> fields. Do not enter a value for Role, and select <span class="bold">Deploy Password</span>. Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>In the Step 3 screen, you need to provide information about the 
+computer where your database is located. Your database administrator 
+should provide you with this information.</p>
+<p>Enter the following information:</p>
+<ul>
+<li>
+<p><span class="bold"><a id="sthref239" name="sthref239"></a>Driver</span>: <code>thin</code></p>
+</li>
+<li>
+<p><a id="sthref240" name="sthref240"></a><span class="bold">Host Name</span>: Host name of the computer where Oracle Database XE is installed</p>
+</li>
+<li>
+<p><span class="bold"><a id="sthref241" name="sthref241"></a>JDBC Port</span>: <code>1521</code></p>
+</li>
+<li>
+<p><a id="sthref242" name="sthref242"></a><span class="bold">Service Name</span>: <code>XE</code></p>
+<p>If database server is on the same computer, then for the <span class="bold">Host Name</span> parameter, enter <code>localhost</code>. <a href="#CACDGGJD">Figure 3-1</a> shows the Create Database Connection wizard screen where you enter these details.</p>
+<div class="figure"><a id="CACDGGJD" name="CACDGGJD"></a>
+<p class="titleinfigure">Figure 3-1 Specifying Connection Details</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/conndetail.gif" alt="Description of Figure 3-1 follows" title="Description of Figure 3-1 follows" height="400" width="600"><br>
+<a id="sthref243" name="sthref243" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/conndetail.htm">Description of "Figure 3-1 Specifying Connection Details"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+</ul>
+</li>
+<li>
+<p>In the Step 4 screen, you can test whether or not you can successfully connect to the database. Click <span class="bold">Test Connection</span>. If the connection is successful, the word Success! displays in the Status field.</p>
+</li>
+<li>
+<p>Click <span class="bold">Finish</span> to create the connection and close the wizard.</p>
+</li>
+</ol>
+<a id="sthref244" name="sthref244"></a>
+<p class="subhead2"><a id="sthref245" name="sthref245"></a><a id="sthref246" name="sthref246"></a>Disconnecting and Reconnecting from Oracle Database in JDeveloper</p>
+<p>To disconnect from the database in JDeveloper, in the Connection Navigator, right-click the connection name and select <span class="bold">Disconnect</span>.
+ The display in the Connection Navigator now shows only the name of the 
+connection, without the plus (+) symbol for expanding the node. To 
+reconnect to the database, right-click the connection name and select <span class="bold">Connect</span>.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CACFFCBJ" name="CACFFCBJ"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><a id="sthref247" name="sthref247"></a>Browsing the Data Using the <a id="sthref248" name="sthref248"></a>Connection Navigator</h3>
+<p>After you have successfully established a connection to the database,
+ you can browse its contents through the Connection Navigator. The 
+Connection Navigator displays a navigable, hierarchical tree structure 
+for the database, its objects, their instances, and the contents of 
+each. To view the contents at each level of the hierarchy of the 
+database connection that you create, do the following:</p>
+<ol>
+<li>
+<p>The Database node in the Connection Navigator now shows a node with 
+the name of your connection. Click the plus symbol (+) to the left of 
+the connection name to expand the navigation tree. The name of the 
+schema to which you connected, in this case <code>HR</code>, is displayed.</p>
+</li>
+<li>
+<p>To view the list of all the objects in the <code>HR</code> schema, expand the <span class="bold">HR</span> navigation tree. To display a list of the instances of an object type, for example Tables, expand the <span class="bold">Table</span> navigation tree.</p>
+<div class="figure"><a id="sthref249" name="sthref249"></a>
+<p class="titleinfigure">Figure 3-2 Accessing Database Objects in the Connection Navigator</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/connectnavig.gif" alt="Description of Figure 3-2 follows" title="Description of Figure 3-2 follows" height="576" width="271"><br>
+<a id="sthref250" name="sthref250" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/connectnavig.htm">Description of "Figure 3-2 Accessing Database Objects in the Connection Navigator"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+<li>
+<p>The Structure window below the navigator shows the detailed structure
+ of any object selected in the navigator. Select a table in the 
+navigator (for example <code>Employees</code>) to see the columns of that table in the Structure window.</p>
+<div class="figure"><a id="sthref251" name="sthref251"></a>
+<p class="titleinfigure">Figure 3-3 Structure Window</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/structwindow.gif" alt="Description of Figure 3-3 follows" title="Description of Figure 3-3 follows" height="638" width="790"><br>
+<a id="sthref252" name="sthref252" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/structwindow.htm">Description of "Figure 3-3 Structure Window"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+<li>
+<p>If you double-click a table in the navigator, the structure of that 
+table is displayed in the main editing area of the window. It includes 
+details about all the columns, such as Name, Type, and Size, so you can 
+browse the <a id="sthref253" name="sthref253"></a>table definition.</p>
+<p>To view the data from a table, select the <span class="bold">Data</span> tab below the table structure. You can now view and <a id="sthref254" name="sthref254"></a>browse through the table data.</p>
+</li>
+<li>
+<p>You can also edit the objects in the Connection Navigator. To <a id="sthref255" name="sthref255"></a>edit a table, right-click the table and select <span class="bold">Edit</span> from the shortcut menu. A dialog box allows you to make changes to the selected table.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CACCIGDB" name="CACCIGDB"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect1">Setting Up <a id="sthref256" name="sthref256"></a><a id="sthref257" name="sthref257"></a>Applications and Projects in JDeveloper</h2>
+<p>In JDeveloper, you create your work in an application, within which 
+you can organize your work into a number of projects. JDeveloper 
+provides a number of application templates, to help you to create the 
+project structure for standard types of application relatively quickly 
+and easily. At the time you create your application in JDeveloper, you 
+can choose the application template that matches the type of application
+ you will be building.</p>
+<p>The <a id="sthref258" name="sthref258"></a>application template you 
+select determines the initial project structure (the named project 
+folders within the application) and the application technologies that 
+will be included. You can then add any extra libraries or technologies 
+you need for your particular application, and create additional projects
+ if you need them.</p>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref259" name="sthref259"></a>
+<h3 class="sect2"><a id="sthref260" name="sthref260"></a>Using the JDeveloper Application Navigator</h3>
+<p>The <a id="sthref261" name="sthref261"></a>Application Navigator 
+displays all your applications and projects. When you first start 
+JDeveloper, the Application Navigator is displayed by default on the 
+left side of the JDeveloper IDE.</p>
+<p>To view the Application Navigator when it is not displayed, you can click the <span class="bold">Applications</span> tab in the navigator panel on the top left-hand side of the JDeveloper display, or select <span class="bold">Application Navigator</span> from the View menu.</p>
+<p>The Application Navigator shows a logical grouping of the items in 
+your projects. To see the structure of an individual item, you can 
+select it and the structure is displayed in the Structure window.</p>
+<p>From the Application Navigator, you can display items in an 
+appropriate default editor. For example, if you double-click a Java 
+file, the file opens in the Java Source Editor, and if you double-click a
+ JavaServer Pages (JSP) file, it opens in the JSP/HTML Visual Editor.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref262" name="sthref262"></a>
+<h3 class="sect2">Creating an <a id="sthref263" name="sthref263"></a><a id="sthref264" name="sthref264"></a>Application and a Project</h3>
+<p>To get started with JDeveloper, you must create an application and at least one project in which to store your work as follows:</p>
+<ol>
+<li>
+<p>In the Application Navigator, right-click <span class="bold">Applications</span>, and select <span class="bold">New Application</span> from the shortcut menu. The Create Application Workspace dialog box is displayed, which is shown in <a href="#CHDEJABJ">Figure 3-4</a>.</p>
+</li>
+<li>
+<p>Enter <code>HRApp</code> in the Application Name field, and in the Application Template list, select <span class="bold">No Template [All Technologies]</span>. Click <span class="bold">OK</span>. The Create Project dialog box is displayed.</p>
+<div class="figure"><a id="CHDEJABJ" name="CHDEJABJ"></a>
+<p class="titleinfigure">Figure 3-4 Creating an Application Workspace</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/createapp.gif" alt="Description of Figure 3-4 follows" title="Description of Figure 3-4 follows" height="422" width="482"><br>
+<a id="sthref265" name="sthref265" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/createapp.htm">Description of "Figure 3-4 Creating an Application Workspace"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+<li>
+<p>On the Create Project dialog box, enter <code>view</code> as the name of the project.</p>
+</li>
+<li>
+<p>The new <code>HRApp</code> application is displayed in the Application Navigator.</p>
+</li>
+<li>
+<p>Save your application. To do this, from the <span class="bold">File</span> menu, select <span class="bold">Save All</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref266" name="sthref266"></a>
+<h3 class="sect2">Viewing the Javadoc and Source Code Available in the Project Scope</h3>
+<p>You can view the Javadoc or the code for any of the classes available
+ in the project technology scope within JDeveloper. In addition, you can
+ view the details of all the methods available for those classes.</p>
+<p>For example, to see the code or Javadoc for the <code>Connection</code> class, do the following:</p>
+<ol>
+<li>
+<p>With your project selected in the Application Navigator, from the <span class="bold">Navigate</span> menu select <span class="bold">Go to Java Class</span>. You can also do this for a specific file in your project.</p>
+</li>
+<li>
+<p>In the Go to Java Class dialog box, select <span class="bold">Source</span> or <span class="bold">Javadoc</span>.</p>
+</li>
+<li>
+<p>Enter the name of the class you want to view, in the <span class="bold">Name</span> field, or click <span class="bold">Browse</span> to find the class. For the <code>Connection</code> class, start to enter <code>Connection</code>, and from the displayed list select <span class="bold">Connection (java.sql)</span>.</p>
+<div class="figure"><a id="sthref267" name="sthref267"></a>
+<p class="titleinfigure">Figure 3-5 Selecting the Class to View the Javadoc in JDeveloper</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/selectclass.gif" alt="Description of Figure 3-5 follows" title="Description of Figure 3-5 follows" height="314" width="404"><br>
+<a id="sthref268" name="sthref268" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/selectclass.htm">Description of "Figure 3-5 Selecting the Class to View the Javadoc in JDeveloper"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<div class="figure"><a id="sthref269" name="sthref269"></a>
+<p class="titleinfigure">Figure 3-6 Javadoc Display in JDeveloper</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/javadoc.gif" alt="Description of Figure 3-6 follows" title="Description of Figure 3-6 follows" height="700" width="893"><br>
+<a id="sthref270" name="sthref270" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/javadoc.htm">Description of "Figure 3-6 Javadoc Display in JDeveloper"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CACGJJFE" name="CACGJJFE"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" -->
+<h2 class="sect1"><a id="sthref271" name="sthref271"></a>Connecting to the Database from a Java Application</h2>
+<p>So far, you have seen how to connect to the database from JDeveloper.
+ To initiate a connection from the Java application, you use the <code>Connection</code> object from the JDBC application programming interface (API).</p>
+<p>This section describes connecting to the database from the Java application in the following subsections:</p>
+<ul>
+<li>
+<p><a href="#CACCCIIC">Overview of Connecting to Oracle Database</a></p>
+</li>
+<li>
+<p><a href="#CACGDCFF">Specifying Database URLs</a></p>
+</li>
+<li>
+<p><a href="#CACHDGCH">Creating a Java Class in JDeveloper</a></p>
+</li>
+<li>
+<p><a href="#CACHIGCG">Java Libraries</a></p>
+</li>
+<li>
+<p><a href="#CACJDCJC">Adding JDBC and JSP Libraries</a></p>
+</li>
+<li>
+<p><a href="#CACEFBDC">Importing the JDBC Packages</a></p>
+</li>
+<li>
+<p><a href="#CACGGGJA">Declaring Connection-Related Variables</a></p>
+</li>
+<li>
+<p><a href="#CACGDFCJ">Creating the Connection Method</a></p>
+</li>
+</ul>
+<a id="CACCCIIC" name="CACCCIIC"></a>
+<div class="sect2">
+<h3 class="sect2"><a id="sthref272" name="sthref272"></a>Overview of <a id="sthref273" name="sthref273"></a><a id="sthref274" name="sthref274"></a>Connecting to Oracle Database</h3>
+<p>In Java, you use an instance of the <code>DataSource</code> object to get a connection to the database. The <code>DataSource</code> interface provides a complete replacement for the previous JDBC <code>DriverManager</code> class. Oracle implements the <code>javax.sql.DataSource</code> interface with the <code>OracleDataSource</code> class in the <code>oracle.jdbc.pool</code> package. The overloaded <code>getConnection</code> method returns a physical connection to the database.</p>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+The use of the <code><a id="sthref275" name="sthref275"></a>DriverManager</code> class to establish a connection to a database is deprecated.</div>
+<p>You can either set properties using appropriate <code>set</code><code><span class="codeinlineitalic">xxx</span></code> methods for the <code><a id="sthref276" name="sthref276"></a><a id="sthref277" name="sthref277"></a>DataSource</code> object or use the <code>getConnection</code> method that accepts these properties as input parameters.</p>
+<p>Important <code><a id="sthref278" name="sthref278"></a>DataSource</code> Properties are listed in <a href="#g1073223">Table 3-1</a>.</p>
+<div class="tblformalwide"><a id="sthref279" name="sthref279"></a><a id="g1073223" name="g1073223"></a>
+<p class="titleintable">Table 3-1 St<a id="sthref280" name="sthref280"></a>andard Data Source Properties</p>
+<table class="FormalWide" title="Standard Data Source Properties" summary="table" dir="ltr" frame="hsides" rules="groups" width="100%" border="1" cellpadding="3" cellspacing="0">
+<thead>
+<tr valign="top" align="left">
+<th id="r1c1-t3" valign="bottom" align="left">Name</th>
+<th id="r1c2-t3" valign="bottom" align="left">Type</th>
+<th id="r1c3-t3" valign="bottom" align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr valign="top" align="left">
+<td id="r2c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref281" name="sthref281"></a>databaseName</code></p>
+</td>
+<td headers="r2c1-t3 r1c2-t3" align="left">
+<p><code>String</code></p>
+</td>
+<td headers="r2c1-t3 r1c3-t3" align="left">
+<p>Name of the particular database on the server. Also known as the 
+service name (or SID) in Oracle terminology. For Oracle Database XE, 
+this is <code>XE</code>.</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r3c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref282" name="sthref282"></a>dataSourceName</code></p>
+</td>
+<td headers="r3c1-t3 r1c2-t3" align="left">
+<p><code>String</code></p>
+</td>
+<td headers="r3c1-t3 r1c3-t3" align="left">
+<p>Name of the underlying data source class.</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r4c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref283" name="sthref283"></a>description</code></p>
+</td>
+<td headers="r4c1-t3 r1c2-t3" align="left">
+<p><code>String</code></p>
+</td>
+<td headers="r4c1-t3 r1c3-t3" align="left">
+<p>Description of the data source.</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r5c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref284" name="sthref284"></a>networkProtocol</code></p>
+</td>
+<td headers="r5c1-t3 r1c2-t3" align="left">
+<p><code>String</code></p>
+</td>
+<td headers="r5c1-t3 r1c3-t3" align="left">
+<p>Network protocol for communicating with the server. For Oracle, this 
+applies only to the JDBC Oracle Call Interface (OCI) drivers and 
+defaults to <code>tcp</code>.</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r6c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref285" name="sthref285"></a>password</code></p>
+</td>
+<td headers="r6c1-t3 r1c2-t3" align="left">
+<p><code>String</code></p>
+</td>
+<td headers="r6c1-t3 r1c3-t3" align="left">
+<p>Password for the connecting user.</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r7c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref286" name="sthref286"></a>portNumber</code></p>
+</td>
+<td headers="r7c1-t3 r1c2-t3" align="left">
+<p><code>int</code></p>
+</td>
+<td headers="r7c1-t3 r1c3-t3" align="left">
+<p>Number of the port where the server listens for requests</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r8c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref287" name="sthref287"></a>serverName</code></p>
+</td>
+<td headers="r8c1-t3 r1c2-t3" align="left">
+<p><code>String</code></p>
+</td>
+<td headers="r8c1-t3 r1c3-t3" align="left">
+<p>Name of the database server</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r9c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref288" name="sthref288"></a>user</code></p>
+</td>
+<td headers="r9c1-t3 r1c2-t3" align="left">
+<p><code>String</code></p>
+</td>
+<td headers="r9c1-t3 r1c3-t3" align="left">
+<p>User name to be used for login</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r10c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref289" name="sthref289"></a>driverType</code></p>
+</td>
+<td headers="r10c1-t3 r1c2-t3" align="left">
+<p><code>String</code></p>
+</td>
+<td headers="r10c1-t3 r1c3-t3" align="left">
+<p>Specifies the Oracle JDBC driver type. It can be either <code>oci</code> or <code>thin</code>.</p>
+<p>This is an Oracle-specific property.</p>
+</td>
+</tr>
+<tr valign="top" align="left">
+<td id="r11c1-t3" headers="r1c1-t3" align="left">
+<p><code><a id="sthref290" name="sthref290"></a>url</code></p>
+</td>
+<td headers="r11c1-t3 r1c2-t3" align="left">
+<p>String</p>
+</td>
+<td headers="r11c1-t3 r1c3-t3" align="left">
+<p>Specifies the URL of the database connect string.You can use this property in place of the standard <code>portNumber</code>, <code>networkProtocol</code>, <code>serverName</code>, and <code>databaseName</code> properties.</p>
+<p>This is an Oracle-specific property.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br></div>
+<!-- class="tblformalwide" -->
+<p>If you choose to set the <a id="sthref291" name="sthref291"></a><code>url</code> property of the <a id="sthref292" name="sthref292"></a><code>DataSource</code>
+ object with all necessary parameters, then you can connect to the 
+database without setting any other properties or specifying any 
+additional parameters with the <code><a id="sthref293" name="sthref293"></a>getDBConnection</code> method. For more information on setting the database URL, refer to the <a href="#CACGDCFF">Specifying Database URLs</a> section.</p>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+The parameters specified through the <code>getConnection</code> method override all property and <code>url</code> parameter settings previously specified in the application.</div>
+<div class="infoboxnotealso">
+<p class="notep1">See Also:</p>
+For more information on the <code>DataSource</code> class properties, refer to <span class="italic"><a class="olinkSRC JJDBC" href="http://www.oracle.com/pls/xe102/lookup?id=JJDBC">Oracle Database JDBC Developer's Guide and Reference</a></span>.</div>
+</div>
+<!-- class="sect2" -->
+<a id="CACGDCFF" name="CACGDCFF"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><a id="sthref294" name="sthref294"></a>Specifying Database URLs</h3>
+<p>Database URLs are strings that you specify for the value of the <code>url</code> property of the <code>DataSource</code> object. The complete <a id="sthref295" name="sthref295"></a>URL syntax is:</p>
+<pre xml:space="preserve" class="oac_no_warn">jdbc:oracle:<span class="italic">driver_type</span>:[<span class="italic">username</span>/<span class="italic">password</span>]@<span class="italic">database_specifier</span>
+
+</pre>
+<p>The first part of the URL specifies which JDBC driver is to be used. The supported <a id="sthref296" name="sthref296"></a><code><span class="codeinlineitalic">driver_type</span></code> values for client-side applications are <code>thin</code> and <code>oci</code>. The brackets indicate that the user name and password pair is optional. The <code><span class="codeinlineitalic"><a id="sthref297" name="sthref297"></a>database_specifier</span></code> value identifies the database to which the application is connected.</p>
+<p>The syntax for <a id="sthref298" name="sthref298"></a>thin-style service names that are supported by the JDBC Thin Driver is as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">jdbc:oracle:<span class="italic">driver_type</span>:[<span class="italic">username</span>/<span class="italic">password</span>]@//<span class="italic">host_name</span>:<span class="italic">port_number</span>/<span class="italic">service_name</span>
+
+</pre>
+<p>For the sample application created in this guide, if you include the 
+user name and password, and if the database server is hosted locally, 
+then the database connection URL is as shown in <a href="#CACFEEAI">Example 3-1</a>.</p>
+<div class="example"><a id="CACFEEAI" name="CACFEEAI"></a>
+<p class="titleinexample">Example 3-1 Specifying the Database URL Using a <a id="sthref299" name="sthref299"></a>non-XE Client Installation</p>
+<pre xml:space="preserve" class="oac_no_warn">jdbc:oracle:thin:hr/hr@localhost:1521/XE
+</pre></div>
+<!-- class="example" -->
+<a id="CACICDFD" name="CACICDFD"></a>
+<div class="sect3">
+<h4 class="sect3">Connecting from the <a id="sthref300" name="sthref300"></a><a id="sthref301" name="sthref301"></a>Oracle Database XE Client</h4>
+<p>Oracle Database XE comes with a new connection feature. If you install the <a id="sthref302" name="sthref302"></a>Oracle Database XE client, then you need not specify all the details in the <code><span class="codeinlineitalic">database_specifier</span></code>
+ part of the connection URL. Under certain conditions, the Oracle 
+Database XE connection adapter requires only the host name of the 
+computer where the database is installed.</p>
+<p>Because of this feature introduced in Oracle Database XE, the connection string syntax is as shown in <a href="#CACGEIFF">Example 3-2</a>.</p>
+<div class="example"><a id="CACGEIFF" name="CACGEIFF"></a>
+<p class="titleinexample">Example 3-2 Specifying the Database URL Using the XE Client Installation</p>
+<pre xml:space="preserve" class="oac_no_warn">jdbc:oracle:<span class="italic">driver_type</span>:[<span class="italic">username</span>/<span class="italic">password</span>]@<span class="italic">[//]host_name</span>[:port][/XE]
+
+</pre></div>
+<!-- class="example" -->
+<p>In this URL:</p>
+<ul>
+<li>
+<p>// is optional.</p>
+</li>
+<li>
+<p><code>:port</code> is optional.</p>
+<p>Specify this only if the default Oracle Net listener port (1521) is not used.</p>
+</li>
+<li>
+<p><code>/XE</code>, or the service name, is not required.</p>
+<p>The connection adapter for the Oracle Database XE Client connects to 
+the default service on the host. On the host, this is set to <code>XE</code> in the <code>listener.ora</code> file.</p>
+</li>
+</ul>
+<p><a id="sthref303" name="sthref303"></a>Default service is a new 
+feature of Oracle Database XE. If you use any other Oracle Database 
+client to connect to Oracle Database XE, then you must specify the 
+service name.</p>
+<p>For example, if you connect to a local database using port number 1522 for the listener, then your database URL changes to:</p>
+<pre xml:space="preserve" class="oac_no_warn">jdbc:oracle:<span class="italic">thin</span>:hr/hr@<span class="italic">//localhost</span>:1522
+
+</pre>
+<p>And if you use all other defaults, but connect to a database on a remote computer (called <code>testserver.oracle.com</code> for example), then the connection URL is as shown in <a href="#CACEECDF">Example 3-3</a>.</p>
+<div class="example"><a id="CACEECDF" name="CACEECDF"></a>
+<p class="titleinexample">Example 3-3 Connection URL for a Remote Database with Default Port</p>
+<pre xml:space="preserve" class="oac_no_warn">jdbc:oracle:<span class="italic">thin</span>:hr/hr@//testserver.oracle.com
+</pre></div>
+<!-- class="example" --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CACHDGCH" name="CACHDGCH"></a>
+<div class="sect2">
+<h3 class="sect2"><a id="sthref304" name="sthref304"></a>Creating a <a id="sthref305" name="sthref305"></a>Java Class in JDeveloper</h3>
+<p>The first step in building a Java application is to create a Java 
+class. The following instructions describe how you can create a class 
+called <code>DataHandler</code>, which will contain the methods for querying the database and modifying the data in it.</p>
+<ol>
+<li>
+<p>In the Application Navigator, right-click the <span class="bold">View</span> project, and from the shortcut menu, select <span class="bold">New</span>.</p>
+</li>
+<li>
+<p>In the <span class="bold">New Gallery</span>, select the <span class="bold">General</span> category. In the <span class="bold">Items</span> list, select <span class="bold"><a id="sthref306" name="sthref306"></a>Java Class</span>, and click <span class="bold">OK</span>. The Create Java Class dialog box is displayed.</p>
+</li>
+<li>
+<p>In the Create Java Class dialog box, enter <code>DataHandler</code> as the class <span class="bold">Name</span>, and <code>hr</code> as the <span class="bold">Package</span>. Do not change the default values of the Optional Attributes, and click <span class="bold">OK</span>. The Create Java Class dialog box with the appropriate values specified is shown in <a href="#CHEIECGG">Figure 3-7</a>.</p>
+<div class="figure"><a id="CHEIECGG" name="CHEIECGG"></a>
+<p class="titleinfigure">Figure 3-7 Creating a Java Class</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/createclass.gif" alt="Description of Figure 3-7 follows" title="Description of Figure 3-7 follows" height="329" width="330"><br>
+<a id="sthref307" name="sthref307" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/createclass.htm">Description of "Figure 3-7 Creating a Java Class"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+<li>
+<p>The s<a id="sthref308" name="sthref308"></a>keleton <code>DataHandler</code>
+ class is created and is displayed in the Java Source Editor. The 
+package declaration, the class declaration, and the default constructor 
+are created by default. <a href="#CACFCFCA">Figure 3-8</a> shows the class displayed in the Java Source Editor, ready for you to add your Java code:</p>
+<div class="figure"><a id="CACFCFCA" name="CACFCFCA"></a>
+<p class="titleinfigure">Figure 3-8 Java Source Editor</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/sourceeditor.gif" alt="Description of Figure 3-8 follows" title="Description of Figure 3-8 follows" height="250" width="397"><br>
+<a id="sthref309" name="sthref309" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/sourceeditor.htm">Description of "Figure 3-8 Java Source Editor"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CACHIGCG" name="CACHIGCG"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2"><a id="sthref310" name="sthref310"></a>Java Libraries</h3>
+<p>Oracle JDeveloper comes with standard libraries to help Java application programming. These libraries include <a id="sthref311" name="sthref311"></a>API
+ support for Application Development Framework (ADF), Apache Ant, Apache
+ Batik, Oracle libraries for JDBC, JavaServer Pages (JSP), and so on. To
+ use these libraries in your application, you need to import them into 
+your project.</p>
+<p>In order for the project to be able to use JDBC, you must add the 
+Oracle JDBC library to the project. In addition, to use JSP technology, 
+you need the JSP Runtime library.</p>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref312" name="sthref312"></a>
+<h4 class="sect3"><a id="sthref313" name="sthref313"></a>Oracle JDBC Library</h4>
+<p>Important packages of the Oracle JDBC Library include:</p>
+<ul>
+<li>
+<p><a id="sthref314" name="sthref314"></a><code><a id="sthref315" name="sthref315"></a><a id="sthref316" name="sthref316"></a><a id="sthref317" name="sthref317"></a>oracle.jdbc</code>: The interfaces of the <code>oracle.jdbc</code> package define the Oracle extensions to the interfaces in <code>java.sql</code>.
+ These extensions provide access to Oracle SQL-format data and other 
+Oracle-specific features, including Oracle performance enhancements.</p>
+</li>
+<li>
+<p><a id="sthref318" name="sthref318"></a><code><a id="sthref319" name="sthref319"></a>oracle.sql</code>: The <code>oracle.sql</code>
+ package supports direct access to data in SQL format. This package 
+consists primarily of classes that provide Java mappings to SQL data 
+types and their support classes.</p>
+</li>
+<li>
+<p><a id="sthref320" name="sthref320"></a><code><a id="sthref321" name="sthref321"></a>oracle.jdbc.pool</code>: This package includes the <code>OracleDataSource</code> class that is used to get a connection to the database. The overloaded <code>getConnection</code> method returns a physical connection to the database.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref322" name="sthref322"></a>
+<h4 class="sect3"><a id="sthref323" name="sthref323"></a>JSP Runtime Library</h4>
+<p>This library includes the classes and tag libraries required to interpret and run JSP pages on the <a id="sthref324" name="sthref324"></a>OC4J server that comes with JDeveloper.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CACJDCJC" name="CACJDCJC"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2">Adding <a id="sthref325" name="sthref325"></a>JDBC and JSP Libraries</h3>
+<p>To include libraries in your project, perform the following steps:</p>
+<ol>
+<li>
+<p>Double-click the <span class="bold">View</span> project in the Application Navigator to display the <a id="sthref326" name="sthref326"></a><a id="sthref327" name="sthref327"></a>Project Properties dialog box.</p>
+</li>
+<li>
+<p>Click <span class="bold">Libraries</span>, and then click <span class="bold">Add Library</span>.
+ The Add Library dialog box is displayed with a list of the available 
+libraries for the Java2 Platform, Standard Edition (J2SE) version is 
+displayed.</p>
+</li>
+<li>
+<p>In the Add Library dialog box, scroll through the list of libraries in the Extension folder. Select the <span class="bold">JSP Runtime</span> library and click OK to add it to the list of selected libraries for your project. Similarly, add the Oracle JDBC library. <a href="#CHEJJJCG">Figure 3-9</a> shows the Oracle JDBC library added to the <code>view</code> project.</p>
+<div class="figure"><a id="CHEJJJCG" name="CHEJJJCG"></a>
+<p class="titleinfigure">Figure 3-9 Importing Libraries</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/importlib.gif" alt="Description of Figure 3-9 follows" title="Description of Figure 3-9 follows" height="500" width="700"><br>
+<a id="sthref328" name="sthref328" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/importlib.htm">Description of "Figure 3-9 Importing Libraries"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+</li>
+</ol>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+It is not compulsory to manually add the JSP Runtime Library to your 
+project. It is automatically added when you create a JSP page.</div>
+</div>
+<!-- class="sect2" -->
+<a id="CACEFBDC" name="CACEFBDC"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2">Importing the JDBC Packages</h3>
+<p>To use JDBC in the Java application, import the following JDBC packages:</p>
+<ol>
+<li>
+<p>If the <code>DataHandler.java</code> class is not already open in the Java Source Editor, in the Application Navigator, expand the <span class="bold">View</span> project, <span class="bold">Application Sources</span>, and your package (<span class="bold">hr</span>) and double-click <span class="bold">DataHandler.java</span>.</p>
+</li>
+<li>
+<p>At the end of the generated package declaration, on a new line, enter the import statements shown in <a href="#CACDGBHI">Example 3-4</a>.</p>
+</li>
+</ol>
+<div class="example"><a id="CACDGBHI" name="CACDGBHI"></a>
+<p class="titleinexample">Example 3-4 Importing Packages in a Java Application</p>
+<pre xml:space="preserve" class="oac_no_warn">package hr;
+import java.sql.Connection;
+import oracle.jdbc.pool.OracleDataSource;
+</pre></div>
+<!-- class="example" --></div>
+<!-- class="sect2" -->
+<a id="CACGGGJA" name="CACGGGJA"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2">Declaring Connection-Related Variables</h3>
+<p>Connection information is passed to the connection method by using 
+the following connection variables: the connection URL, a user name, and
+ the corresponding password.</p>
+<p>Use the Java Source Editor of JDeveloper to edit the <code>DataHandler.java</code> class as follows:</p>
+<ol>
+<li>
+<p>After the <code>DataHandler</code> constructor, on a new line, declare the three connection variables as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">String jdbcUrl = null;
+String userid = null;
+String password = null; 
+
+</pre>
+<p>These variables will be used in the application to contain values 
+supplied by the user at login to authenticate the user and to create a 
+connection to the database. The <code>jdbcUrl</code> variable is used to hold the URL of the database from which a connection is to be obtained. The <code>userid</code> and <code>password</code> variables are used to authenticate the user and identify the schema to be used for the session.</p>
+<div class="infoboxnote">
+<p class="notep1">Note:</p>
+The login variables have been set to null to secure the application. 
+Until the section where the application login functionality is built 
+into the application, to test the application, you can set values in 
+these variables as follows:Set the <code>jdbcUrl</code> variable to the 
+connect string for your database. If you have installed the Oracle 
+Database XE Client and are using the default listener port, then you can
+ use the default service feature as described in <a href="#CACICDFD">Connecting from the Oracle Database XE Client</a>. In this case, the <code>jdbcUrl</code> value can be set to:
+<pre xml:space="preserve" class="oac_no_warn">String jdbcUrl = "jdbc:oracle:thin:@localhost";
+
+</pre>
+<p>If you are not connecting to the default listener port on the 
+database server, include the port number. Set the variables userid and 
+password to hr as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">String userid = "hr";
+String password = "hr";
+
+</pre>
+<p>Make sure you reset these back to <code>null</code> as soon as you finish testing.</p>
+<p>For more information on security features and practices, refer to <span class="italic">Oracle Database Security Guide</span> and the vendor-specific documentation for your development environment.</p>
+</div>
+</li>
+<li>
+<p>On a new line, declare a connection instance as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">Connection conn;
+
+</pre>
+<p>Your Java class should now contain the code in <a href="#CACGEIDC">Example 3-5</a>.</p>
+<div class="example"><a id="CACGEIDC" name="CACGEIDC"></a>
+<p class="titleinexample">Example 3-5 Declaring Connection Variables and the Connection Object</p>
+<pre xml:space="preserve" class="oac_no_warn">package hr;
+import java.sql.Connection;
+import oracle.jdbc.pool.OracleDataSource;
+ 
+public class DataHandler {
+    public DataHandler() {
+    }
+    String jdbcUrl = null;
+    String userid = null;
+    String password = null; 
+    Connection conn;
+}
+
+</pre></div>
+<!-- class="example" --></li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CACGDFCJ" name="CACGDFCJ"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" -->
+<h3 class="sect2">Creating the Connection Method</h3>
+<p>To connect to the database, you need to create a method as follows:</p>
+<ol>
+<li>
+<p>Add the following method declaration after the connection declaration</p>
+<pre xml:space="preserve" class="oac_no_warn">public void getDBConnection() throws SQLException
+
+</pre>
+<p>Java Code Insight displays a message reminding you to import the <code>SQLException</code> error handling package. Press Alt+Enter keys to import it. The <code>import java.sql.SQLException</code> statement is added to the list of import packages.</p>
+</li>
+<li>
+<p>At the end of the same line, add an open brace (<code>{</code>) and 
+then press the Enter key. JDeveloper automatically creates the closing 
+brace, and positions the cursor in a new empty line between the braces.</p>
+</li>
+<li>
+<p>On a new line, declare an <code>OracleDataSource</code> instance as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">OracleDataSource ds;
+
+</pre></li>
+<li>
+<p>Enter the following to create a new <code>OracleDataSource</code> object:</p>
+<pre xml:space="preserve" class="oac_no_warn">ds = new OracleDataSource();
+
+</pre></li>
+<li>
+<p>Start to enter the following to set the URL for the <code>DataSource</code> object:</p>
+<pre xml:space="preserve" class="oac_no_warn">ds.setURL(String);
+
+</pre>
+<p>Java Code Insight prompts you by providing you with a list of available <code>OracleDataSource</code> methods. Scroll through the list to select the <code>setURL(String)</code> method, and press Enter to select it into your code. In the parentheses for this function, enter <code>jdbcUrl</code>.</p>
+<p><a href="#CACFBEEI">Figure 3-10</a> shows how the Java Code Insight feature in JDeveloper helps you with inserting code.</p>
+<div class="figure"><a id="CACFBEEI" name="CACFBEEI"></a>
+<p class="titleinfigure">Figure 3-10 Java Code Insight</p>
+<img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/codeinsight.gif" alt="Description of Figure 3-10 follows" title="Description of Figure 3-10 follows" height="252" width="400"><br>
+<a id="sthref329" name="sthref329" href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/img_text/codeinsight.htm">Description of "Figure 3-10 Java Code Insight"</a><br>
+<br></div>
+<!-- class="figure" --></li>
+<li>
+<p>On the next line, enter the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">conn = ds.getConnection(userid, password); 
+
+</pre>
+<p>As usual, Java Code Insight will prompt you with a list of methods for <code>ds</code>. This time, select <code>getConnection(String,String)</code>. In the parentheses, enter <code>userid</code>,<code>password</code>. End the line with a semicolon (;).</p>
+<p>Your code should look similar to the code in <a href="#CACBBFHB">Example 3-6</a>.</p>
+<div class="example"><a id="CACBBFHB" name="CACBBFHB"></a>
+<p class="titleinexample">Example 3-6 Adding a Method to Connect to the Database</p>
+<pre xml:space="preserve" class="oac_no_warn">package hr;
+import java.sql.Connection;
+import java.sql.SQLException;
+ 
+import oracle.jdbc.pool.OracleDataSource;
+ 
+public class DataHandler {
+    public DataHandler() {
+    }
+    String jdbcUrl = null;
+    String userid = null;
+    String password = null; 
+    Connection conn; 
+    public void getDBConnection() throws SQLException {
+        OracleDataSource ds;
+        ds = new OracleDataSource();
+        ds.setURL(jdbcUrl);
+        conn = ds.getConnection(userid, password);
+        
+    }
+}
+
+</pre></div>
+<!-- class="example" --></li>
+<li>
+<p>Compile your class to ensure that there are no syntax errors. To do this, right-click in the Java Source Editor, and select <span class="bold">Make</span> from the shortcut menu. A <code>Successful compilation</code> message is displayed in the Log window below the Java Source Editor window.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr>
+<table class="simple oac_no_warn" summary="" width="100%" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" width="98" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/getstart.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/leftnav.gif" alt="Go to previous page"><br>
+<span class="icon">Previous</span></a></td>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/querdata.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/rightnav.gif" alt="Go to next page"><br>
+<span class="icon">Next</span></a></td>
+</tr>
+</tbody></table>
+</td>
+<td style="width: 34%; font-size: 90%" class="copyrightlogo" align="center"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/oracle.gif" alt="Oracle"><br>
+<a href="http://docs.oracle.com/cd/B25329_01/doc/dcommon/html/cpyr.htm">Copyright&nbsp;©&nbsp;2006, 2007,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" width="294" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top" align="center"><a href="http://www.oracle.com/pls/xe102/homepage"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/doclib.gif" alt="Go to Documentation Home"><br>
+<span class="icon">Home</span></a></td>
+<td valign="top" align="center"><a href="http://www.oracle.com/pls/xe102/portal.all_books"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/booklist.gif" alt="Go to Book List"><br>
+<span class="icon">Book List</span></a></td>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/toc.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/toc.gif" alt="Go to Table of Contents"><br>
+<span class="icon">Contents</span></a></td>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/appdev.102/b25320/index.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/index.gif" alt="Go to Index"><br>
+<span class="icon">Index</span></a></td>
+<td valign="top" align="center"><a href="http://www.oracle.com/pls/xe102/show_mindex"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/masterix.gif" alt="Go to Master Index"><br>
+<span class="icon">Master Index</span></a></td>
+<td valign="top" align="center"><a href="http://docs.oracle.com/cd/B25329_01/doc/dcommon/html/feedback.htm"><img src="3%20Connecting%20to%20Oracle%20Database%20XE_files/feedbck2.gif" alt="Go to Feedback page"><br>
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<div style="position: fixed;" onselectstart="return false;" dir="ltr" id="tf_hui_container"><div style="background-position: 0px 0px;" class="nd_e506252a6b7649eb9640b54befbe7519_status" id="nd_e506252a6b7649eb9640b54befbe7519_status"><label id="labelstatus">This page <br> is safe</label></div><div class="nd_e506252a6b7649eb9640b54befbe7519_title" id="nd_e506252a6b7649eb9640b54befbe7519_title"><span class="notranslate"><label id="labeltitle">Bitdefender Total Security 2012</label></span></div><div class="nd_e506252a6b7649eb9640b54befbe7519_separator"></div><a style="width:auto" title="Sandbox" class="nd_e506252a6b7649eb9640b54befbe7519_tool" id="nd_e506252a6b7649eb9640b54befbe7519_tooltip_sandbox"><div id="nd_e506252a6b7649eb9640b54befbe7519_tooltip_sandbox_img"></div></a><div class="nd_e506252a6b7649eb9640b54befbe7519_separator"></div><a style="width:auto" title="Settings" class="nd_e506252a6b7649eb9640b54befbe7519_tool" id="nd_e506252a6b7649eb9640b54befbe7519_tooltip_settings"><div id="nd_e506252a6b7649eb9640b54befbe7519_tooltip_settings_img"></div></a><div class="nd_e506252a6b7649eb9640b54befbe7519_separator"></div><a title="ON/OFF" class="nd_e506252a6b7649eb9640b54befbe7519_onoff nd_e506252a6b7649eb9640b54befbe7519_onoff_on" id="nd_e506252a6b7649eb9640b54befbe7519_onoff"></a><a title="Click to expand" class="nd_e506252a6b7649eb9640b54befbe7519_dragger" id="nd_e506252a6b7649eb9640b54befbe7519_dragger"></a><div class="nd_e506252a6b7649eb9640b54befbe7519_settings_page"><div class="nd_e506252a6b7649eb9640b54befbe7519_settings_page_top"></div><div class="nd_e506252a6b7649eb9640b54befbe7519_settings_page_content"><p class="nd_e506252a6b7649eb9640b54befbe7519_settings_feature"><label class="labelstatustxt"><strong>Antiphishing Filter</strong><br>Blocks pages that contain phishing.</label><a class="nd_e506252a6b7649eb9640b54befbe7519_settings_btn_status nd_e506252a6b7649eb9640b54befbe7519_settings_btn_status_on" id="nd_e506252a6b7649eb9640b54befbe7519_1"></a><div class="nd_e506252a6b7649eb9640b54befbe7519_settings_feature_spacer"></div></p><p class="nd_e506252a6b7649eb9640b54befbe7519_settings_feature"><label class="labelstatustxt"><strong>Antimalware Filter</strong><br>Blocks pages that contain malware.</label><a class="nd_e506252a6b7649eb9640b54befbe7519_settings_btn_status nd_e506252a6b7649eb9640b54befbe7519_settings_btn_status_on" id="nd_e506252a6b7649eb9640b54befbe7519_2"></a><div class="nd_e506252a6b7649eb9640b54befbe7519_settings_feature_spacer"></div></p><p class="nd_e506252a6b7649eb9640b54befbe7519_settings_feature"><label class="labelstatustxt"><strong>Search advisor</strong><br>Provides advanced warning of risky websites in your search results.</label><a class="nd_e506252a6b7649eb9640b54befbe7519_settings_btn_status nd_e506252a6b7649eb9640b54befbe7519_settings_btn_status_on" id="nd_e506252a6b7649eb9640b54befbe7519_3"></a></p></div><div class="nd_e506252a6b7649eb9640b54befbe7519_settings_page_bottom"><a class="nd_e506252a6b7649eb9640b54befbe7519_settings_page_upbtn"></a></div></div></div></body></html>
